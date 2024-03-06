@@ -34,10 +34,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     server: {
       // 允许IP访问
       host: "0.0.0.0",
-      // 应用端口 (默认:3000)
+      // 应用端口 (默认:88)
       port: Number(env.VITE_APP_PORT),
       // 运行是否自动打开浏览器
-      open: true,
+      open: false,
       proxy: {
         /**
          * env.VITE_APP_BASE_API: /dev-api
@@ -64,7 +64,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           IconsResolver({}),
         ],
         vueTemplate: true,
-        imports: ["vue"],
+        imports: ["vue", "@vueuse/core", "pinia", "vue-router", "vue-i18n"],
         eslintrc: {
           enabled: true, //是否自动生成eslint规则，建议生成之后设置false
           filepath: "./.eslintrc-auto-import.json",

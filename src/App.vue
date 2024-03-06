@@ -1,32 +1,35 @@
-<script setup lang="ts">
-import HelloWorld from "@/components/HelloWorld.vue";
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <el-config-provider :locale="locale" :size="size">
+    <!-- 开启水印 -->
+    <!-- <el-watermark
+      v-if="watermarkEnabled"
+      :font="{ color: fontColor }"
+      :content="defaultSettings.watermarkContent"
+      class="wh-full"
+    >
+      <router-view />
+    </el-watermark>
+    <router-view v-else /> -->
+    <router-view />
+  </el-config-provider>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  transition: filter 300ms;
-  will-change: filter;
-}
+<script setup lang="ts">
+import { useAppStore, useSettingsStore } from "@/store";
+import defaultSettings from "@/settings";
+import { ThemeEnum } from "@/enums/ThemeEnum";
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
+const appStore = useAppStore();
+const settingsStore = useSettingsStore();
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+const locale = computed(() => appStore.locale);
+const size = computed(() => appStore.size);
+const watermarkEnabled = computed(() => settingsStore.watermarkEnabled);
+
+// 明亮/暗黑主题水印字体颜色适配
+const fontColor = computed(() => {
+  return settingsStore.theme === ThemeEnum.DARK
+    ? "rgba(255, 255, 255, .15)"
+    : "rgba(0, 0, 0, .15)";
+});
+</script>
