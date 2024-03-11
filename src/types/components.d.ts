@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppLink: typeof import('./../layout/components/AppLink/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
@@ -15,6 +16,10 @@ declare module 'vue' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElImage: typeof import('element-plus/es')['ElImage']
     ElInput: typeof import('element-plus/es')['ElInput']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
@@ -25,6 +30,11 @@ declare module 'vue' {
     IEpWarnTriangleFilled: typeof import('~icons/ep/warn-triangle-filled')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Sidebar: typeof import('./../layout/components/Sidebar/index.vue')['default']
+    SidebarLogo: typeof import('./../layout/components/Sidebar/components/SidebarLogo.vue')['default']
+    SidebarMenu: typeof import('./../layout/components/Sidebar/components/SidebarMenu.vue')['default']
+    SidebarMenuItem: typeof import('./../layout/components/Sidebar/components/SidebarMenuItem.vue')['default']
+    SidebarMenuItemTitle: typeof import('./../layout/components/Sidebar/components/SidebarMenuItemTitle.vue')['default']
     SvgIcon: typeof import('./../components/SvgIcon/index.vue')['default']
   }
 }

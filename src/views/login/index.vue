@@ -101,6 +101,8 @@ import { LoginData } from "@/api/auth/types";
 import { Sunny, Moon } from "@element-plus/icons-vue";
 import { ThemeEnum } from "@/enums/ThemeEnum";
 import router from "@/router";
+import { LocationQuery, LocationQueryValue, useRoute } from "vue-router";
+const route = useRoute();
 const appStore = useAppStore();
 const settingsStore = useSettingsStore();
 const userStore = useUserStore();

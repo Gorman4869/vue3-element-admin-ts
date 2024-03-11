@@ -68,6 +68,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         eslintrc: {
           enabled: true, //是否自动生成eslint规则，建议生成之后设置false
           filepath: "./.eslintrc-auto-import.json",
+          globalsPropValue: true,
         },
         dts: resolve(pathSrc, "types", "auto-imports.d.ts"), //指定自动导入函数TS类型声明文件路径
       }),
