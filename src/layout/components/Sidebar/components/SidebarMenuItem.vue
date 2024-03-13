@@ -122,7 +122,7 @@ function resolvePath(routePath: string) {
   return fullPath;
 }
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 .hideSidebar {
   .submenu-title-noDropdown {
     position: relative;

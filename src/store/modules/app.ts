@@ -33,6 +33,7 @@ export const useAppStore = defineStore("app", () => {
   // actions
   function toggleSidebar() {
     sidebar.opened = !sidebar.opened;
+    console.log(sidebar.opened);
     if (sidebar.opened) {
       sidebarStatus.value = "opened";
     } else {

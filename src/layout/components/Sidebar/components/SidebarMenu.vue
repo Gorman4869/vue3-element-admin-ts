@@ -41,8 +41,6 @@ const props = defineProps({
     required: true,
   },
 });
-console.log(settingsStore);
-console.log(props);
 // console.log(props.menuList);
 /**
  * @param routePath 路由路径 /user
