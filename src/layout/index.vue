@@ -5,6 +5,7 @@
     <div class="main-container">
       <div>
         <NavBar v-if="layout === 'left'" />
+        <TagsView v-if="showTagsView" />
       </div>
     </div>
   </div>
@@ -17,6 +18,7 @@ import defaultSettings from "@/settings";
 const appStore = useAppStore();
 const settingsStore = useSettingsStore();
 const permissionStore = usePermissionStore();
+const showTagsView = computed(() => settingsStore.tagsView); // 是否显示tagsView
 const layout = computed(() => settingsStore.layout); // 布局模式 left top mix
 const width = useWindowSize().width;
 const WIDTH = 992; // 响应式布局容器固定宽度  大屏（>=1200px） 中屏（>=992px） 小屏（>=768px）
