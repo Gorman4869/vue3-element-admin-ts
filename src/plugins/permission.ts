@@ -28,6 +28,7 @@ export function setupPermission() {
           try {
             const { roles } = await userStore.getUserInfo();
             const accessRoutes = await permissionStore.generateRoutes(roles);
+            console.log(accessRoutes, "访问路由");
             accessRoutes.forEach((route) => {
               router.addRoute(route);
             });

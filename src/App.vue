@@ -1,7 +1,7 @@
 <template>
   <el-config-provider :locale="locale" :size="size">
     <!-- 开启水印 -->
-    <!-- <el-watermark
+    <el-watermark
       v-if="watermarkEnabled"
       :font="{ color: fontColor }"
       :content="defaultSettings.watermarkContent"
@@ -9,8 +9,8 @@
     >
       <router-view />
     </el-watermark>
-    <router-view v-else /> -->
-    <router-view />
+    <router-view v-else />
+    <!-- <router-view /> -->
   </el-config-provider>
 </template>
 

@@ -19,7 +19,10 @@ export const useSettingsStore = defineStore("setting", () => {
   //布局模式 left top mix
   const layout = useStorage<string>("layout", defaultSettings.layout);
   //主题颜色
-  const themeColor = useStorage<string>("themeColor", defaultSettings.theme);
+  const themeColor = useStorage<string>(
+    "themeColor",
+    defaultSettings.themeColor
+  );
   //主题：light dark
   const theme = useStorage<string>("theme", defaultSettings.theme);
   //是否开启水印
